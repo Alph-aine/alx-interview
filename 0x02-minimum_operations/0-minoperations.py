@@ -6,14 +6,13 @@ n times
 
 
 def minOperations(n):
-    if n <= 1:
-        return 0  # No operations needed for n <= 1
-
-    dp = [0] * (n + 1)  # Initialize the dp array with zeros
+    dp = [0] * (n + 1)
 
     for i in range(2, n + 1):
-        for j in range(2, i // 2 + 1):
+        dp[i] = i  # Initialize dp[i] with the worst-case scenario
+
+        for j in range(2, i):
             if i % j == 0:
-                dp[i] = dp[j] + i // j
+                dp[i] = min(dp[i], dp[j] + i // j)
 
     return dp[n]
