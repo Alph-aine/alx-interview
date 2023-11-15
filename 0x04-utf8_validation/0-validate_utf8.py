@@ -25,8 +25,8 @@ def validUTF8(data):
 
         if leading_ones == 0:
             i += 1
-        elif (leading_ones == 2 or leading_ones > 4
-              or i + leading_ones > len(data)):
+        elif (leading_ones == 2 or leading_ones > 4 or
+              i + leading_ones > len(data)):
             return False
         else:
             for j in range(1, leading_ones):
