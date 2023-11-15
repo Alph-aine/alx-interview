@@ -106,7 +106,8 @@ if __name__ == "__main__":
     except ValueError:
         print("N must be a number")
         sys.exit(1)
-
+    
+    n = sys.argv[1]
     if n < 4:
         print("N must be at least 4")
 
