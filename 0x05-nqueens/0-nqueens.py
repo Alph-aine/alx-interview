@@ -106,7 +106,7 @@ if __name__ == "__main__":
         if n < 4:
             raise ValueError("N must be at least 4")
     except ValueError:
-        print("N must be a number")
+        print("N must be at least 4")
         sys.exit(1)
 
     solutions = solve_nqueens(n)
